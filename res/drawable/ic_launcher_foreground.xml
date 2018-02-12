@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2023 The EunoiaOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <group>
+    <clip-path
+        android:pathData="M0,0h108v108h-108z"/>
+    <path
+        android:pathData="M 34,4 C 28.46,4 24,8.46 24,14 v 80 c 0,5.54 4.46,10 10,10 h 40 c 5.54,0 10,-4.46 10,-10 V 14 C 84,8.46 79.54,4 74,4 Z m 0,4 h 15 c 0,1.662 1.338,3 3,3 h 4 c 1.662,0 3,-1.338 3,-3 h 15 c 3.324,0 6,2.676 6,6 V 94 H 28 V 14 c 0,-3.324 2.676,-6 6,-6 z"
+        android:fillColor="#2A3232"
+        android:fillType="evenOdd"/>
+    <path
+        android:pathData="M28.54,28.54m-72,0a72,72 0,1 1,144 0a72,72 0,1 1,-144 0"
+        android:fillAlpha="0.6">
+      <aapt:attr name="android:fillColor">
+        <gradient
+            android:gradientRadius="72"
+            android:centerX="28.54"
+            android:centerY="28.54"
+            android:type="radial">
+          <item android:offset="0" android:color="#19FFFFFF"/>
+          <item android:offset="1" android:color="#00FFFFFF"/>
+        </gradient>
+      </aapt:attr>
+    </path>
+  </group>
+</vector>
