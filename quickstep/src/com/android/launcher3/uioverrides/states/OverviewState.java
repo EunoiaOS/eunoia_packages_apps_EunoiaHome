@@ -25,6 +25,7 @@ import android.os.SystemProperties;
 
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
+import com.android.launcher3.LauncherPrefs;
 import com.android.launcher3.LauncherState;
 import com.android.launcher3.R;
 import com.android.launcher3.util.DisplayController;
@@ -108,7 +109,8 @@ public class OverviewState extends LauncherState {
 
     @Override
     public int getVisibleElements(Launcher launcher) {
-        int elements = CLEAR_ALL_BUTTON | OVERVIEW_ACTIONS | MEMINFO;
+        boolean memInfo = LauncherPrefs.getPrefs(launcher).getBoolean("pref_recents_meminfo", false);
+        int elements = CLEAR_ALL_BUTTON | OVERVIEW_ACTIONS;
         DeviceProfile dp = launcher.getDeviceProfile();
         boolean showFloatingSearch;
         if (dp.isPhone) {
@@ -123,6 +125,9 @@ public class OverviewState extends LauncherState {
         }
         if (enableSplitContextual() && launcher.isSplitSelectionActive()) {
             elements &= ~CLEAR_ALL_BUTTON;
+        }
+        if (memInfo) {
+            elements |= MEMINFO;
         }
         return elements;
     }
