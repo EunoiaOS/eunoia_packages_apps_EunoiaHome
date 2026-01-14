@@ -42,6 +42,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartFragmentCallback;
 import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartScreenCallback;
@@ -204,12 +205,7 @@ public class SettingsActivity extends FragmentActivity
             setPreferencesFromResource(R.xml.launcher_preferences, rootKey);
 
             PreferenceScreen screen = getPreferenceScreen();
-            for (int i = screen.getPreferenceCount() - 1; i >= 0; i--) {
-                Preference preference = screen.getPreference(i);
-                if (!initPreference(preference)) {
-                    screen.removePreference(preference);
-                }
-            }
+            filterPreferences(screen);
 
             if (getActivity() != null && !TextUtils.isEmpty(getPreferenceScreen().getTitle())) {
                 getActivity().setTitle(getPreferenceScreen().getTitle());
@@ -364,6 +360,25 @@ public class SettingsActivity extends FragmentActivity
             return position >= 0 ? new PreferenceHighlighter(
                     list, position, screen.findPreference(mHighLightKey))
                     : null;
+        }
+
+        private void filterPreferences(PreferenceGroup group) {
+            for (int i = group.getPreferenceCount() - 1; i >= 0; i--) {
+                Preference pref = group.getPreference(i);
+
+                if (pref instanceof PreferenceGroup) {
+                    filterPreferences((PreferenceGroup) pref);
+
+                    if (((PreferenceGroup) pref).getPreferenceCount() == 0) {
+                        group.removePreference(pref);
+                        continue;
+                    }
+                }
+
+                if (!initPreference(pref)) {
+                    group.removePreference(pref);
+                }
+            }
         }
     }
 }
