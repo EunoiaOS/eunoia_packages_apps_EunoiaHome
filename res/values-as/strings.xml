@@ -113,7 +113,7 @@
     <string name="app_pair_name_format" msgid="8134106404716224054">"এপ্ পেয়াৰ কৰা: <xliff:g id="APP1">%1$s</xliff:g> আৰু <xliff:g id="APP2">%2$s</xliff:g>"</string>
     <string name="styles_wallpaper_button_text" msgid="8216961355289236794">"ৱালপেপাৰ আৰু শৈলী"</string>
     <string name="edit_home_screen" msgid="8947858375782098427">"গৃহ স্ক্ৰীন সম্পাদনা কৰক"</string>
-    <string name="settings_button_text" msgid="8873672322605444408">"গৃহ ছেটিং"</string>
+    <string name="settings_button_text" msgid="8873672322605444408">"EunoiaHome ছেটিং"</string>
     <string name="msg_disabled_by_admin" msgid="6898038085516271325">"আপোনাৰ প্ৰশাসকে অক্ষম কৰি ৰাখিছে"</string>
     <string name="allow_rotation_title" msgid="7222049633713050106">"গৃহ স্ক্ৰীন ঘূৰোৱাৰ অনুমতি দিয়ক"</string>
     <string name="allow_rotation_desc" msgid="8662546029078692509">"ফ\'নটো যেতিয়া ঘূৰোৱা হয়"</string>
