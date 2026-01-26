@@ -74,7 +74,7 @@
         <SwitchPreference
             android:key="pref_recents_meminfo"
             android:title="@string/recents_meminfo_title"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:persistent="true"
             launcher:iconSpaceReserved="false" />
 
